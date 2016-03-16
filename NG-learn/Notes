@@ -1,0 +1,27 @@
+
+
+
+ How data-binding happening in NG?
+ 
+ 
+ 
+   NG life-cycle 
+   --------------
+   
+   
+   Compilation Phase
+   
+   
+   on every DOM eleement , which are having directives/expression , will register
+   'watch' expressions ( listeners ).
+   
+   'watch' expression - read/write model property when model is dirty.
+   
+   
+   
+   In Angular , we can also register our 'custom' watch expressions.
+   
+   
+   all 'watch' expressions are executed by 'digest-loop' more efficiently
+   
+   --------------------------------------------

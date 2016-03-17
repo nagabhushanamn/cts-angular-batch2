@@ -1,4 +1,5 @@
 {
+  "ecmaVersion": 6,
   "plugins": {
     "outline": {
       
@@ -14,6 +15,5 @@
     "ecma5",
     "ecma6",
     "browser"
-  ],
-  "ecmaVersion": 6
+  ]
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+.ng-scope {
+	border: 1px solid red;
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+
+
+	<div class="container" ng-app="demoApp">
+
+		<div class="page-header">NG - directives ( isolated scope )</div>
+
+
+		<div ng-controller="ColorController">
+
+			<input ng-model="color">
+			<hr />
+
+			<hello-world my-color="color"></hello-world>
+			<hr />
+			<hello-world></hello-world>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="jquery-2.2.0.js"></script>
+	<script type="text/javascript" src="angular-1.4.8 2/angular.js"></script>
+	<script type="text/javascript">
+		var appModule = angular.module('demoApp', []);
+		appModule.controller('ColorController', function($scope) {
+			$scope.color = 'yellow';
+		});
+
+		appModule.directive('helloWorld', function() {
+			return {
+				restrict : "E",
+				replace : true,
+				scope : {
+					//color:'@myColor'  // read
+					color:"=myColor"    // read & write
+				},
+				templateUrl : "templates/hello-world.html",
+				link : function(scope, tElement, tAttrs) {
+
+					//console.log(scope.color);
+					//scope.color='grey';
+
+					//tElement.addClass('ng-scope');
+
+					tElement.on('mousemove', function(e) {
+						tElement.css('cursor', 'pointer');
+					});
+					tElement.on('click', function(e) {
+						//tElement.css('background-color', '#fff');
+						console.log('changing color..');
+
+						scope.$apply(function() {
+							scope.color = "#fff";
+						});
+
+					});
+					
+					/* 
+					 if (tAttrs.myColor) {
+					 scope.color = tAttrs.myColor;
+					 } */
+
+				}
+			};
+		})
+	</script>
+
+</body>
+</html>

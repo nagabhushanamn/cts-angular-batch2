@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet">
+</head>
+<body>
+
+
+	<div class="container">
+
+		<div class="page-header">NG - directives</div>
+
+		<div ng-app="demoApp">
+
+			<div hello-world></div>
+			<div hello:world></div>
+
+			<hr />
+			
+			<hello-world></hello-world>
+			<hello:world></hello:world>
+			
+			<hr/>
+			
+			<div class="hello-world"></div>
+			
+			<hr/>
+			
+			<!-- directive:hello-world -->
+			
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="angular-1.4.8 2/angular.js"></script>
+	<script type="text/javascript">
+		var appModule = angular.module('demoApp', []);
+		appModule.directive('helloWorld', function() {
+			return {
+				restrict : "AECM",
+				replace: true,
+				template : "<h4>Angular World</h4>"
+			};
+		});
+	</script>
+
+</body>
+</html>

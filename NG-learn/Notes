@@ -25,3 +25,70 @@
    all 'watch' expressions are executed by 'digest-loop' more efficiently
    
    --------------------------------------------
+   
+   
+   
+   NG Validation
+   --------------
+   
+   
+   by default , Angular keeps form/form-fields in following states
+   
+   -> pristine
+   -> dirty
+   -> invalid
+   -> valid
+   
+   -> untouched
+   -> touched
+   
+   
+   how angular will validate form-fields ?
+   
+   2-ways
+   
+   --> using HTML-5 validation attributes
+   --> using validation directives.
+   
+   
+   ------------------------------------------
+   
+   
+   
+   NG - custom-directives
+   ----------------------
+   
+   
+   NG apply 'declarative' programming using 'directives'
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

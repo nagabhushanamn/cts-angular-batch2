@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+
+	<div class="container" ng-app="demoApp"">
+
+		<div class="page-header">NG - service(s)</div>
+
+		<div ng-controller="HitController">
+			<button class="btn btn-primary" ng-click="doHit()">Hit Me</button>
+			<span class="badge"> {{count}}</span>
+		</div>
+		<hr />
+		<div ng-controller="HitController">
+			<button class="btn btn-primary" ng-click="doHit()">Hit Me</button>
+			<span class="badge"> {{count}}</span>
+		</div>
+		<hr />
+		<div ng-controller="KickController">
+			<button class="btn btn-primary" ng-click="doKick()">Kick Me</button>
+			<span class="badge"> {{count}}</span>
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript" src="angular-1.4.8 2/angular.js"></script>
+
+	<script type="text/javascript">
+		var appModule = angular.module('demoApp', []);
+
+		/* 
+		appModule.config(function(counterServiceProvider) {
+			counterServiceProvider.setInitCount(100);
+		}); 
+		 */
+
+		appModule.controller('HitController', function($scope, counterService,trainer) {
+			console.log('New HitController Instance created....');
+			console.log(trainer.name);
+			$scope.count = counterService.getCount();
+			$scope.doHit = function() {
+				counterService.doCount();
+				$scope.count = counterService.getCount();
+			};
+		});
+
+		appModule.controller('KickController',function($scope, counterService) {
+			console.log('New KickController Instance created....');
+			$scope.count = counterService.getCount();
+			$scope.doKick = function() {
+				counterService.doCount();
+				$scope.count = counterService.getCount();
+			};
+		});
+
+		//----------------------------------------------------------
+
+		/* 
+		
+		appModule.provider('counterService', function() {
+
+			var count = 0;
+
+			this.setInitCount = function(newCount) {
+				console.log('Initializing New Count..');
+				count = newCount;
+			};
+
+			this.$get = function() {
+
+				console.log('counterService instance created/registered');
+
+				var service = {
+					doCount : function() {
+						count++;
+					},
+					getCount : function() {
+						return count;
+					}
+				};
+
+				return service;
+
+			};
+
+		}); 
+		
+		 */
+
+		//----------------------------------------------------------
+
+			/* 
+			
+			appModule.factory('counterService', function() {
+	
+				console.log('counterService factory func called...');
+	
+				// init...
+				var count = 0;
+	
+				var service = {
+					doCount : function() {
+						count++;
+					},
+					getCount : function() {
+						return count;
+					}
+				};
+	
+				return service;
+	
+			});
+		 
+			 */
+		 
+		//----------------------------------------------------------
+		
+		/*
+		function Counter(){
+			console.log('new instance created....');	 
+			this.count=0;		 
+			this.doCount=function(){
+				this.count+=1;
+			}
+			this.getCount=function(){
+				return this.count;
+			}
+		}
+			 
+	   appModule.service('counterService',Counter);	
+	   
+	   */	
+	   
+	 //----------------------------------------------------------
+	 
+	 var service = {
+			        count:0,
+					doCount : function() {
+						this.count++;
+					},
+					getCount : function() {
+						return this.count;
+					}
+				};
+	   
+     appModule.value('counterService',service);
+	
+      var tnr={name:'Nag'};
+     
+      appModule.value('trainer',tnr);
+     
+	</script>
+
+</body>
+</html>

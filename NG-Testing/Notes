@@ -1,0 +1,49 @@
+
+
+
+   Ng- testing
+   -------------
+   
+   --> Unit Testing
+   --> e2e Testing
+   
+   
+   ----------------------
+   
+   
+   Unit Tesing
+   ------------
+   
+       Testing F.W
+       
+           --> to write test-cases
+           --> to execute test-cases ( test-runner )
+           
+           
+       for JS , many testing f.w
+       
+       
+       --> jasmine  ( popular , easy )
+       --> mocha
+       --> qunit
+       --> nodeunit
+       .......
+       
+    -------------------------------------   
+    
+    
+    E2E Testing
+    ---------------
+    
+    
+    Jasmine
+    
+    Protractor
+    
+    
+    
+    
+    
+    
+    
+           

@@ -65,29 +65,170 @@
    
    
    
+  ----------------------------------------------------------
+  
+  
+
+  Dependency Injection ( DI )
+  ---------------------------
+  
+  
+    object(s)
+    
+      -> dependent
+      -> dependency
+      
+      
+      ---------------
+      
+      dependent
+      
+               can create its own dependency
+               
+       limitation(s)
+       
+        --> tight-coupling         
+        --> too many dependencies
+        --> Not able to apply UnitTestin
+        
+        Soln:
+        
+        --> invert it - Dont dependency in dependent , do lookup
+        
+        Limitation on lookup:
+        
+        -> location tight-coupling
+        
+        Best Soln:
+        
+        -> Dont create , Dont lookup and get/inject by 'some-one'  ( IOC )
+        
+        how to implement IOC ?
+        
+        by 'Dependency Injection' ( DI )
+        
+        
+        ------------------------------------------------ 
    
    
    
    
    
    
+        NG- services
+        ---------------
+        
+        5 ways , to register/create service comp
+   
+      
+      -----------------------------------------------------
+      
+       way-1.  module.provider('some',providerFunc);
+   
+       provider-name   --> someProvider
+       service-name    --> some
+   
+       adv:
+       
+          can initialize services , before injection , with user configuration
+          
+          
+          e.g
+          
+          app.config(function(provider,$httpProvider){
+          
+          provider.xxxxx();
+          
+          httpProvider.setDefaultHeaders({xxxx:value});
+          
+          });
+          
+          
+          app.controller('someController',function($http){
+          $http.get(url);
+          });
+   
+      -----------------------------------------------------
+   
+      way-2.  module.factory('name,function(){
+      
+               //
+               
+               return 'service';
+      	
+      		  });
+    
+     -------------------------------------------------------
+     
+     
+    way-3. module.service(name,constructor);
+     
+    ---------------------------------------------------------
+    
+     way-4.
+     
+           module.value('name',anyValue); 
+   
+    ---------------------------------------------------------
+    
+    way-5
+    
+          module.constant('name',{});
+   
+   -----------------------------------------------------------
    
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+
+	
+	NG - Routing
+	-------------
+	
+	
+	--> single-page application ( SPA )
+	
+	how to implement ?
+	
+	
+	using angular routing modules
+
+
+    a. ngRoute
+    
+       basic module
+       
+    b. ui.router  ( advanced )
+    
+        given by 'angular-UI' team
+        
+    ---------------------------------------------------------   
+    
+    sample Appl.
+    
+    PM
+    
+      CRUD oprn on product
+      
+      
+    ---------------------------------------------------------       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
    
    

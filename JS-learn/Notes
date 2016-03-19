@@ -1,0 +1,116 @@
+
+
+
+
+
+
+
+ what is JS ?
+ 
+ --> single-threaded
+ --> non-blocking
+ --> concurrent
+ --> asynchronous 
+ 
+ ------------------------
+ 
+ JS envi ( browser , NodeJS ..  )
+ 
+ 
+ In browser
+ 
+ 
+        1. JS - engine/runtime
+           
+            Stack
+            Heap
+            
+        2. EventLoop   
+        3. Callback-queue
+        
+        4. Web APIs ( DOM , XHR , HTML-5 APIs , Timer)
+        
+   ------------------------------------------
+   
+    JS
+    
+    single-threaded ==== single call-stack  === one thing/action
+    
+    
+    ----------------------------------------------------------
+   
+        
+        what happen if one func doing some heavy tasks :-
+        
+        --> running big-loops
+        --> synch n/w ing
+        --> img processing..
+        
+        
+        
+         blocking ....
+        
+        
+    -------------------------------------------------------    
+        
+        
+     but how JS is non-blocking ?
+     
+     by async 'call-back'  functions
+     
+    ------------------------------------------------------  
+        
+        
+        
+        
+     JS - Promise API
+     ---------------
+     
+     
+      -------------------------------
+      
+      synch actions --> blocked
+      
+      async actions --> non-blocking
+      
+      -------------------------------
+     
+     
+     postpone actions to future with promise
+     
+     -----------------------------------------
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+        
+        
+        
+        
+        
+        
+        

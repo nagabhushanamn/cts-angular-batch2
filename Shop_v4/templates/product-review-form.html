@@ -1,0 +1,30 @@
+<form name="reviewForm" ng-submit="reviewForm.$valid&&addNewReview(product)" novalidate="novalidate">
+		
+	<blockquote ng-show="newReview.rating">
+		<span>{{newReview.rating}}</span>
+		<p>{{newReview.comments}}</p>
+		<small>-{{newReview.user}}</small>
+   </blockquote>
+
+	<div class="row">
+		<div class="col-md-6">
+		
+			<div class="form-group">
+				<label>Rating</label>
+				<select class="form-control" ng-options="n for n in [1,2,3,4,5]" ng-model="newReview.rating" required></select>
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				<input class="form-control" type="email" ng-disabled="true" ng-model="newReview.user" required>
+			</div>
+			<div class="form-group">
+				<label>Comments</label>
+				<textarea class="form-control" rows="5" cols="35" ng-model="newReview.comments" required valid-comment></textarea>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Submit</button>
+			
+		</div>
+	</div>
+
+</form>
